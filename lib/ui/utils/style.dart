@@ -12,12 +12,12 @@ class Style {
         color: ColorTheme.textColor, fontSize: 15, fontWeight: FontWeight.w800);
   }
 
-  static TextStyle theme1({Color color = ColorTheme.textColor}) {
+  static TextStyle abhayaLibre({Color color = ColorTheme.textColor}) {
     return GoogleFonts.abhayaLibre(
         color: color, fontSize: 25, fontWeight: FontWeight.w300);
   }
 
-  static TextStyle theme2({Color color = ColorTheme.textColor}) {
+  static TextStyle bungee({Color color = ColorTheme.textColor}) {
     return GoogleFonts.bungee(
         color: color, fontSize: 40, fontWeight: FontWeight.w500);
   }
@@ -25,5 +25,10 @@ class Style {
   static TextStyle body({Color color = ColorTheme.textColor}) {
     return GoogleFonts.signikaNegative(
         color: color, fontSize: 15, fontWeight: FontWeight.w500, letterSpacing: 2);
+  }
+
+  static TextStyle montserrat({Color color = ColorTheme.textColor}) {
+    return GoogleFonts.montserrat(
+        color: color, fontSize: 15, fontWeight: FontWeight.w800, letterSpacing: 2);
   }
 }

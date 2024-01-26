@@ -27,4 +27,5 @@ class ColorTheme {
   static const Color color10 = Color(0xFF424769);
   static const Color color11 = Color(0xFF7077A1);
   static const Color color12 = Color(0xFFF6B17A);
+  static const Color color12_hover = Color(0xFFF6A65E);
 }
