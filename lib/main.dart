@@ -6,7 +6,7 @@ import 'routes/app_pages.dart';
 void main() async {
   runApp(GetMaterialApp(
     title: "Ankur Maity",
-    initialRoute: AppPages.INITIAL,
+    initialRoute: AppPages.initialPage,
     getPages: AppPages.routes,
     debugShowCheckedModeBanner: false,
     theme: ThemeData(primarySwatch: Colors.blueGrey, primaryColor: Colors.amber),

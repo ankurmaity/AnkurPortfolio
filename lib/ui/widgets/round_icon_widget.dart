@@ -8,12 +8,14 @@ class RoundIcon extends StatelessWidget {
       {super.key,
       this.size = 40,
       this.color = ColorTheme.color3,
-      this.margin = 5});
+      this.margin = 5,
+      this.onTap});
 
   String path;
   int size;
   int margin;
   Color color;
+  GestureTapCallback? onTap;
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +23,7 @@ class RoundIcon extends StatelessWidget {
       padding: const EdgeInsets.all(8.0),
       child: InkWell(
         customBorder: const CircleBorder(),
-        onTap: () {},
+        onTap: onTap,
         splashColor: ColorTheme.color2,
         child: SvgPicture.asset(
           path,
@@ -33,33 +35,3 @@ class RoundIcon extends StatelessWidget {
     );
   }
 }
-
-// Container(
-// margin: EdgeInsets.all(margin.toDouble()),
-// padding: const EdgeInsets.all(1),
-// decoration: BoxDecoration(
-// borderRadius: BorderRadius.circular(45),
-// border: Border.all(width: 1, color: color)),
-// child: SvgPicture.asset(
-// path,
-// semanticsLabel: 'My SVG Image',
-// height: size.toDouble(),
-// colorFilter: ColorFilter.mode(color, BlendMode.srcIn),
-// ));
-
-// InkWell(
-// hoverColor: ColorTheme.color12_hover,
-// splashColor: Colors.red,
-// child: Container(
-// padding: const EdgeInsets.all(1),
-// decoration: BoxDecoration(
-// borderRadius: BorderRadius.circular(45),
-// border: Border.all(width: 1, color: color),
-// color: ColorTheme.bgColor),
-// child: SvgPicture.asset(
-// path,
-// semanticsLabel: 'My SVG Image',
-// height: size.toDouble(),
-// colorFilter: ColorFilter.mode(color, BlendMode.srcIn),
-// )),
-// )
