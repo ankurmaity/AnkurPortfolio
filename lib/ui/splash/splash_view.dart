@@ -13,7 +13,7 @@ class SplashView extends GetView<SplashController> {
     return const Scaffold(
         body: Center(
             child: Image(
-      image: AssetImage('assets/icons/ic_logo.png'),
+      image: AssetImage('assets/images/coder_logo.png'),
       width: 200,
       height: 200,
     )));
