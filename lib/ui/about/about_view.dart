@@ -1,22 +1,41 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
-import 'package:ankur_portfolio/data/constant.dart';
-import 'package:ankur_portfolio/ui/sections/social_media_section.dart';
-import 'package:ankur_portfolio/ui/utils/color_constants.dart';
-import 'package:ankur_portfolio/ui/utils/utils.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import '../../data/constant.dart';
+import '../sections/social_media_section.dart';
+import '../utils/color_constants.dart';
 import '../utils/style.dart';
-import 'home_controller.dart';
+import '../sections/skills_sction.dart';
+import '../utils/utils.dart';
+import 'about_controller.dart';
 
-class HomeView extends GetWidget<HomeController> {
+class AboutView extends GetWidget<AboutController> {
   final GlobalKey<ScaffoldState> _key = GlobalKey();
 
-  HomeView({super.key});
+  late AboutController controller;
+
+  AboutView({super.key}) {
+    controller = Get.put(AboutController());
+  }
+
+  var skills = [
+    'Android',
+    'Flutter',
+    'System Design',
+    'Product Design',
+    'Kotlin',
+    'Dart'
+  ];
 
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
+    controller.screenWidth = size.width;
+    return Container(width: controller.screenWidth * 0.5, child: aboutMe());
+  }
+
+  aboutMe() {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -39,17 +58,39 @@ class HomeView extends GetWidget<HomeController> {
         ]),
         const SizedBox(height: 5),
         SizedBox(
-            width: size.width * 0.5,
             child: Text(
-              'With over 8 years in the dynamic realm of mobile development, '
-              'I specialize in Android and Flutter and thrive in transforming '
-              'creative ideas into functional, user-centric solutions. My '
-              'journey has been marked by a commitment to staying ahead of '
-              'industry trends and a dedication to continuous learning.',
-              style: Style.body(),
-              textAlign: TextAlign.justify,
-            )),
+          'With over 10 years in the dynamic realm of mobile development, '
+          'I specialize in Android and Flutter and thrive in transforming '
+          'creative ideas into functional, user-centric solutions. My '
+          'journey has been marked by a commitment to staying ahead of '
+          'industry trends and a dedication to continuous learning.',
+          style: Style.body(),
+          textAlign: TextAlign.justify,
+        )),
         const SizedBox(height: 15),
+        Center(
+          child: SizedBox(
+            height: 30,
+            child: ShaderMask(
+                shaderCallback: (Rect bounds) {
+                  return const LinearGradient(
+                    begin: Alignment.centerLeft,
+                    end: Alignment.centerRight,
+                    colors: [
+                      Colors.transparent,
+                      Colors.black,
+                      Colors.black,
+                      Colors.transparent,
+                    ],
+                    stops: [0.0, 0.08, 0.92, 1.0],
+                  ).createShader(bounds);
+                },
+                blendMode: BlendMode.dstIn,
+                child: InfiniteSkillsTicker(
+                  skills: skills,
+                )),
+          ),
+        ),
         const SocialMedia(),
         const SizedBox(height: 15),
         MaterialButton(

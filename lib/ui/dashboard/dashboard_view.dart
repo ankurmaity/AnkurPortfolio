@@ -1,11 +1,12 @@
 import 'dart:ui';
 
 import 'package:animated_text_kit/animated_text_kit.dart';
-import 'package:ankur_portfolio/ui/home/home_view.dart';
-import 'package:ankur_portfolio/ui/utils/color_constants.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import '../about/about_view.dart';
+import '../experience/experience_view.dart';
+import '../utils/color_constants.dart';
 import '../utils/style.dart';
 import 'dashboard_controller.dart';
 
@@ -72,7 +73,8 @@ class DashboardView extends GetView<DashboardController> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              HomeView(),
+              AboutView(),
+              ExperienceView()
             ],
           ),
         ));

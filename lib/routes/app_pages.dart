@@ -1,9 +1,9 @@
 import 'package:get/get.dart';
 
+import '../ui/about/about_binding.dart';
+import '../ui/about/about_view.dart';
 import '../ui/dashboard/dashboard_binding.dart';
 import '../ui/dashboard/dashboard_view.dart';
-import '../ui/home/home_binding.dart';
-import '../ui/home/home_view.dart';
 import '../ui/splash/splash_binding.dart';
 import '../ui/splash/splash_view.dart';
 
@@ -27,8 +27,8 @@ class AppPages {
     ),
     GetPage(
       name: _Paths.HOME,
-      page: () => HomeView(),
-      binding: HomeBinding(),
+      page: () => AboutView(),
+      binding: AboutBinding(),
     ),
   ];
 }

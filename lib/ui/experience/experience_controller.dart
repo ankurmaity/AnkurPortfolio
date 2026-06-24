@@ -1,6 +1,7 @@
 import 'package:get/get.dart';
 
-class HomeController extends GetxController {
+class ExperienceController extends GetxController {
+  var screenWidth = 0.0;
   @override
   void onInit() {
     super.onInit();
