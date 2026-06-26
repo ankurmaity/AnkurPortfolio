@@ -8,9 +8,15 @@ This project is a starting point for a Flutter application.
 
 A few resources to get you started if this is your first Flutter project:
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+Clean and Rebuild:
+flutter pub run build_runner build --delete-conflicting-outputs
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Change Launcher:
+flutter pub run flutter_launcher_icons
+
+flutter build apk -t lib/main.dart
+--> To build APK, change the main file and flavor accordingly
+
+flutter build appbundle -t lib/main.dart
+--> To build app bundle, change the main file and flavor accordingly
+

@@ -6,4 +6,7 @@ class Constant{
   static String facebook= 'https://www.facebook.com/ankurmaity';
   static String instagram = 'https://www.instagram.com/ankurmaity/';
   static String resume = 'https://drive.google.com/file/d/1Be8iRxwiRml-iw-kXZNysmVG7n68KGAA/view?usp=drive_link';
+
+
+  static String experienceJSON = 'assets/data/exprience.json';
 }

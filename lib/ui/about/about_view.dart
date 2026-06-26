@@ -6,7 +6,7 @@ import '../../data/constant.dart';
 import '../sections/social_media_section.dart';
 import '../utils/color_constants.dart';
 import '../utils/style.dart';
-import '../sections/skills_sction.dart';
+import '../sections/skills_section.dart';
 import '../utils/utils.dart';
 import 'about_controller.dart';
 
@@ -95,7 +95,7 @@ class AboutView extends GetWidget<AboutController> {
         const SizedBox(height: 15),
         MaterialButton(
           onPressed: () {
-            Utils.launchWebUrl(Constant.resume);
+            Utils.instance.launchWebUrl(Constant.resume);
           },
           padding: const EdgeInsets.symmetric(horizontal: 25, vertical: 15),
           hoverColor: ColorTheme.color12_hover,

@@ -13,16 +13,16 @@ class SocialMedia extends StatelessWidget {
     return Row(
       children: [
         RoundIcon(Assets.linkedin, onTap: () {
-          Utils.launchWebUrl(Constant.linkedin);
+          Utils.instance.launchWebUrl(Constant.linkedin);
         }),
         RoundIcon(Assets.github, onTap: () {
-          Utils.launchWebUrl(Constant.github);
+          Utils.instance.launchWebUrl(Constant.github);
         }),
         RoundIcon(Assets.facebook, onTap: () {
-          Utils.launchWebUrl(Constant.facebook);
+          Utils.instance.launchWebUrl(Constant.facebook);
         }),
         RoundIcon(Assets.instagram, onTap: () {
-          Utils.launchWebUrl(Constant.instagram);
+          Utils.instance.launchWebUrl(Constant.instagram);
         }),
       ],
     );

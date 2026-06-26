@@ -1,0 +1,67 @@
+[
+  {
+    "org": "Innovapptive Global Solutions Pvt. Ltd.",
+    "start_date": "201509",
+    "end_date": "201904",
+    "designations": [
+      {
+        "designation": "Associate Developer - Android",
+        "start_date": "201509",
+        "end_date": "201809"
+      },
+      {
+        "designation": "Android Developer",
+        "start_date": "201810",
+        "end_date": "201904"
+      }
+    ]
+  },
+  {
+    "org": "Tray",
+    "start_date": "201904",
+    "end_date": "202102",
+    "designations": [
+      {
+        "designation": "Software Engineer",
+        "start_date": "201904",
+        "end_date": "202102"
+      }
+    ]
+  },
+  {
+    "org": "GE Appliances, a Haier Company",
+    "start_date": "202103",
+    "end_date": "202205",
+    "designations": [
+      {
+        "designation": "Developer, Mobile Application",
+        "start_date": "202103",
+        "end_date": "202205"
+      }
+    ]
+  },
+  {
+    "org": "Tray",
+    "start_date": "202205",
+    "end_date": "202311",
+    "designations": [
+      {
+        "designation": "Senior Software Engineer",
+        "start_date": "202205",
+        "end_date": "202311"
+      }
+    ]
+  },
+  {
+    "org": "Vassar Labs",
+    "start_date": "202311",
+    "end_date": "",
+    "designations": [
+      {
+        "designation": "SDE - 2 ",
+        "start_date": "202311",
+        "end_date": ""
+      }
+    ]
+  }
+]
