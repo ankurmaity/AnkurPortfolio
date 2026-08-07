@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 
 import '../../../../core/theme/app_colors.dart';
+import '../../core/widgets/section_title.dart';
 
 class ProjectsSection extends StatelessWidget {
   const ProjectsSection({super.key});
@@ -17,33 +18,15 @@ class ProjectsSection extends StatelessWidget {
         constraints: const BoxConstraints(maxWidth: 1300),
         child: Column(
           children: [
-
-            const Text(
-              "FEATURED PROJECTS",
-              style: TextStyle(
-                color: AppColors.cyan,
-                letterSpacing: 2,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-
-            const SizedBox(height: 20),
-
-            const Text(
-              "Some Things I've Built",
-              style: TextStyle(
-                fontSize: 50,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-
+            SectionTitle(
+                eyebrow: "PROJECTS",
+                title: "Featured Products",
+                subtitle: "Some of the enterprise solutions I've built."),
             const SizedBox(height: 80),
-
             Wrap(
               spacing: 30,
               runSpacing: 30,
               children: const [
-
                 ProjectCard(
                   title: "MobileWise",
                   subtitle: "No-Code Mobile Platform",
@@ -56,7 +39,6 @@ class ProjectsSection extends StatelessWidget {
                     "REST API",
                   ],
                 ),
-
                 ProjectCard(
                   title: "AP Aware",
                   subtitle: "Disaster Management Platform",
@@ -69,7 +51,6 @@ class ProjectsSection extends StatelessWidget {
                     "AI",
                   ],
                 ),
-
                 ProjectCard(
                   title: "TRAY",
                   subtitle: "Enterprise POS",
@@ -82,7 +63,6 @@ class ProjectsSection extends StatelessWidget {
                     "Hardware",
                   ],
                 ),
-
                 ProjectCard(
                   title: "SmartHQ",
                   subtitle: "IoT Diagnostics",
@@ -95,7 +75,6 @@ class ProjectsSection extends StatelessWidget {
                     "Bluetooth",
                   ],
                 ),
-
                 ProjectCard(
                   title: "mInventory",
                   subtitle: "Warehouse Management",
@@ -107,7 +86,6 @@ class ProjectsSection extends StatelessWidget {
                     "Barcode",
                   ],
                 ),
-
                 ProjectCard(
                   title: "mWorkOrder",
                   subtitle: "Enterprise Mobility",
@@ -119,7 +97,6 @@ class ProjectsSection extends StatelessWidget {
                     "Enterprise",
                   ],
                 ),
-
               ],
             )
           ],
@@ -130,7 +107,6 @@ class ProjectsSection extends StatelessWidget {
 }
 
 class ProjectCard extends StatefulWidget {
-
   final String title;
   final String subtitle;
   final String description;
@@ -149,43 +125,26 @@ class ProjectCard extends StatefulWidget {
 }
 
 class _ProjectCardState extends State<ProjectCard> {
-
   bool hover = false;
 
   @override
   Widget build(BuildContext context) {
-
     return MouseRegion(
-
       onEnter: (_) => setState(() => hover = true),
-
       onExit: (_) => setState(() => hover = false),
-
       child: AnimatedContainer(
-
         duration: const Duration(milliseconds: 250),
-
         width: 390,
-
         padding: const EdgeInsets.all(30),
-
-        transform: Matrix4.identity()
-          ..translate(0.0, hover ? -10.0 : 0.0),
-
+        transform: Matrix4.identity()..translate(0.0, hover ? -10.0 : 0.0),
         decoration: BoxDecoration(
-
           color: hover
               ? Colors.white.withOpacity(.08)
               : Colors.white.withOpacity(.04),
-
           borderRadius: BorderRadius.circular(30),
-
           border: Border.all(
-            color: hover
-                ? AppColors.cyan
-                : Colors.white10,
+            color: hover ? AppColors.cyan : Colors.white10,
           ),
-
           boxShadow: hover
               ? [
                   BoxShadow(
@@ -195,44 +154,29 @@ class _ProjectCardState extends State<ProjectCard> {
                 ]
               : [],
         ),
-
         child: Column(
-
           crossAxisAlignment: CrossAxisAlignment.start,
-
           children: [
-
             Container(
-
               height: 180,
-
               decoration: BoxDecoration(
-
                 borderRadius: BorderRadius.circular(20),
-
                 gradient: const LinearGradient(
-
                   colors: [
                     AppColors.blue,
                     AppColors.cyan,
                   ],
                 ),
               ),
-
               child: const Center(
-
                 child: Icon(
                   Icons.phone_android,
                   size: 70,
                   color: Colors.white,
                 ),
-
               ),
-
             ),
-
             const SizedBox(height: 25),
-
             Text(
               widget.title,
               style: const TextStyle(
@@ -240,18 +184,14 @@ class _ProjectCardState extends State<ProjectCard> {
                 fontWeight: FontWeight.bold,
               ),
             ),
-
             const SizedBox(height: 8),
-
             Text(
               widget.subtitle,
               style: const TextStyle(
                 color: AppColors.cyan,
               ),
             ),
-
             const SizedBox(height: 20),
-
             Text(
               widget.description,
               style: const TextStyle(
@@ -259,9 +199,7 @@ class _ProjectCardState extends State<ProjectCard> {
                 color: AppColors.subtitle,
               ),
             ),
-
             const SizedBox(height: 25),
-
             Wrap(
               spacing: 10,
               runSpacing: 10,
@@ -274,9 +212,7 @@ class _ProjectCardState extends State<ProjectCard> {
                   )
                   .toList(),
             ),
-
             const SizedBox(height: 25),
-
             FilledButton.icon(
               onPressed: () {},
               icon: const Icon(Icons.arrow_forward),

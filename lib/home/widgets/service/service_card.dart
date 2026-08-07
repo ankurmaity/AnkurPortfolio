@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../../models/service_model.dart';
-import 'glass_card.dart';
+import '../../../models/service_model.dart';
+import '../../../core/widgets/glass_card.dart';
 
 class ServiceCard extends StatelessWidget {
   final ServiceModel service;

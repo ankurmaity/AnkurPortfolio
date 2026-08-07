@@ -4,11 +4,11 @@ import 'package:get/get.dart';
 import 'home_controller.dart';
 import 'widgets/about_section.dart';
 import 'widgets/custom_appbar.dart';
-import 'widgets/experience_section.dart';
+import 'widgets/experience/experience_section.dart';
 import 'widgets/hero_section.dart';
 import 'widgets/projects_section.dart';
-import 'widgets/services_section.dart';
-import 'widgets/skills_section.dart';
+import 'widgets/service/services_section.dart';
+import 'widgets/technology/technology_section.dart';
 import 'widgets/stats_section.dart';
 
 class HomeView extends GetView<HomeController> {
@@ -32,7 +32,7 @@ class HomeView extends GetView<HomeController> {
                 AboutSection(),
                 ExperienceSection(),
                 ProjectsSection(),
-                SkillsSection(),
+                TechnologySection(),
                 // ContactSection(),
                 // FooterSection(),
               ],

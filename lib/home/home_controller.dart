@@ -1,7 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../data/portfolio_repository.dart';
+import '../models/experience_model.dart';
+import '../models/project_model.dart';
+import '../models/service_model.dart';
+import '../models/statistic_model.dart';
+import '../models/technology_group_model.dart';
+import '../repositories/portfolio_repository.dart';
 
 class HomeController extends GetxController {
   final scrollController = ScrollController();
@@ -10,15 +15,18 @@ class HomeController extends GetxController {
 
   final isScrolled = false.obs;
 
-  final repository = const PortfolioRepository();
 
-  late final statistics = repository.statistics();
+  final portfolio =  PortfolioRepository();
 
-  late final services = repository.services();
+  List<StatisticModel> get statistics => portfolio.statistics;
 
-  late final projects = repository.projects();
+  List<ServiceModel> get services => portfolio.services;
 
-  late final experiences = repository.experience();
+  List<TechnologyGroupModel> get technologyGroups => portfolio.technologyGroups;
+
+  List<ProjectModel> get projects => portfolio.projects;
+
+  List<ExperienceModel> get experiences => portfolio.experiences;
 
   @override
   void onInit() {
