@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 
 import 'home_controller.dart';
 import 'widgets/about_section.dart';
+import 'widgets/contact_section.dart';
 import 'widgets/custom_appbar.dart';
 import 'widgets/experience/experience_section.dart';
 import 'widgets/hero_section.dart';
@@ -33,7 +34,7 @@ class HomeView extends GetView<HomeController> {
                 ExperienceSection(),
                 ProjectsSection(),
                 TechnologySection(),
-                // ContactSection(),
+                ContactSection(),
                 // FooterSection(),
               ],
             ),
