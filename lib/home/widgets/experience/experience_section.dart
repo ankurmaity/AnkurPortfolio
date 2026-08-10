@@ -12,31 +12,39 @@ class ExperienceSection extends GetView<HomeController> {
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.symmetric(
-        horizontal: 40,
-        vertical: 120,
+        horizontal: 24,
+        vertical: 100,
       ),
       child: ConstrainedBox(
-        constraints: const BoxConstraints(maxWidth: 1400),
+        constraints: const BoxConstraints(
+          maxWidth: 1100,
+        ),
         child: Column(
           children: [
             const SectionTitle(
-              eyebrow: "CAREER JOURNEY",
+              eyebrow: "PROFESSIONAL JOURNEY",
               title: "A Decade of Building Enterprise Software",
               subtitle:
-                  "From enterprise mobility to AI-powered platforms, every role has been focused on solving complex business problems through scalable mobile technology.",
+              "From enterprise mobility to AI-powered platforms, building products that solve complex real-world problems.",
             ),
 
-            const SizedBox(height: 70),
+            const SizedBox(height: 60),
 
             ListView.separated(
               shrinkWrap: true,
-              physics: const NeverScrollableScrollPhysics(),
+              physics:
+              const NeverScrollableScrollPhysics(),
               itemCount: controller.experiences.length,
               separatorBuilder: (_, __) =>
-                  const SizedBox(height: 35),
-              itemBuilder: (_, index) => ExperienceCard(
-                experience: controller.experiences[index],
-              ),
+              const SizedBox(height: 24),
+              itemBuilder: (_, index) {
+                return ExperienceCard(
+                  experience: controller.experiences[index],
+
+                  // Keep the latest role open.
+                  initiallyExpanded: index == 0,
+                );
+              },
             ),
           ],
         ),

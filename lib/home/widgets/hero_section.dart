@@ -8,7 +8,7 @@ class HeroSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
+    return Container(
       height: 850,
       child: Stack(
         children: [

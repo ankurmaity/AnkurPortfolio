@@ -393,6 +393,70 @@ class PortfolioRepository {
     ),
 
     //---------------------------------------------------------------------------
+    // TRAY
+    //---------------------------------------------------------------------------
+
+    ExperienceModel(
+      company: "TRAY",
+      role: "Senior Software Engineer",
+      duration: "April 2019 - Feb 20221",
+      summary:
+          "Developed enterprise Point-of-Sale applications for Android KIOSK devices with hardware integrations, receipt engine customization and performance optimization.",
+      color: const Color(0xffF59E0B),
+      icon: Icons.point_of_sale,
+      logo: "assets/company/tray.png",
+      location: "Remote",
+      employmentType: "Full Time",
+      metrics: const [
+        ExperienceMetric(
+          icon: Icons.store,
+          label: "Platform",
+          value: "Enterprise POS",
+        ),
+        ExperienceMetric(
+          icon: Icons.devices,
+          label: "Hardware",
+          value: "Integrated",
+        ),
+        ExperienceMetric(
+          icon: Icons.speed,
+          label: "Performance",
+          value: "Optimized",
+        ),
+      ],
+      projects: const [
+        ProjectInfo(
+          name: "TRAY POS",
+          description: "Android POS Platform",
+        ),
+      ],
+      contributions: const [
+        ExperienceContribution(
+          icon: Icons.devices_other,
+          title: "Integrated POS hardware devices",
+        ),
+        ExperienceContribution(
+          icon: Icons.receipt_long,
+          title: "Developed configurable receipt engine",
+        ),
+        ExperienceContribution(
+          icon: Icons.speed,
+          title: "Optimized legacy Android application",
+        ),
+        ExperienceContribution(
+          icon: Icons.store,
+          title: "Built enterprise retail solution",
+        ),
+      ],
+      technologies: const [
+        "Android",
+        "Kotlin",
+        "Java",
+        "SQLite",
+      ],
+    ),
+
+    //---------------------------------------------------------------------------
     // Innovapptive
     //---------------------------------------------------------------------------
 
@@ -475,19 +539,6 @@ class PortfolioRepository {
 
   final List<ProjectModel> projects = const [
     ProjectModel(
-      title: "MobileWise",
-      subtitle: "No-Code Mobile Platform",
-      description:
-          "Visual mobile application builder enabling enterprises to create apps without coding.",
-      image: "assets/images/mobilewise.png",
-      technologies: [
-        "Flutter",
-        "Python",
-        "AI",
-        "REST API",
-      ],
-    ),
-    ProjectModel(
       title: "AP Aware",
       subtitle: "AI Disaster Intelligence",
       description:
@@ -498,6 +549,19 @@ class PortfolioRepository {
         "GeoServer",
         "Maps",
         "AI",
+      ],
+    ),
+    ProjectModel(
+      title: "MobileWise",
+      subtitle: "No-Code Mobile Platform",
+      description:
+          "Visual mobile application builder enabling enterprises to create apps without coding.",
+      image: "assets/images/mobilewise.png",
+      technologies: [
+        "Flutter",
+        "Python",
+        "AI",
+        "REST API",
       ],
     ),
     ProjectModel(

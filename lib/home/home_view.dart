@@ -29,7 +29,7 @@ class HomeView extends GetView<HomeController> {
                 HeroSection(),
                 StatsSection(),
                 ServicesSection(),
-                AboutSection(),
+                // AboutSection(),
                 ExperienceSection(),
                 ProjectsSection(),
                 TechnologySection(),
