@@ -21,22 +21,30 @@ class HomeView extends GetView<HomeController> {
       body: Stack(
         children: [
           const _Background(),
-
           SingleChildScrollView(
             controller: controller.scrollController,
-            child: const Column(
+            child: Column(
               children: [
-                CustomAppBar(),
-                HeroSection(),
-                StatsSection(),
-                ServicesSection(),
+                const SizedBox(height: 78),
+                const HeroSection(),
+                const StatsSection(),
+                const ServicesSection(),
                 // AboutSection(),
-                ExperienceSection(),
-                ProjectsSection(),
-                TechnologySection(),
-                ContactSection(),
+                ExperienceSection(key: controller.experienceSectionKey),
+                ProjectsSection(key: controller.projectsSectionKey),
+                const TechnologySection(),
+                ContactSection(key: controller.contactSectionKey),
                 // FooterSection(),
               ],
+            ),
+          ),
+          const Positioned(
+            top: 0,
+            left: 0,
+            right: 0,
+            child: SafeArea(
+              bottom: false,
+              child: CustomAppBar(),
             ),
           ),
         ],
@@ -67,7 +75,6 @@ class _Background extends StatelessWidget {
             ),
           ),
         ),
-
         Positioned(
           left: -180,
           top: -120,
@@ -80,7 +87,6 @@ class _Background extends StatelessWidget {
             ),
           ),
         ),
-
         Positioned(
           right: -150,
           top: 400,
@@ -93,7 +99,6 @@ class _Background extends StatelessWidget {
             ),
           ),
         ),
-
         Positioned(
           left: 300,
           bottom: -150,

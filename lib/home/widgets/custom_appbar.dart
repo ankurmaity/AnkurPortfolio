@@ -9,7 +9,7 @@ class CustomAppBar extends GetView<HomeController> {
 
   @override
   Widget build(BuildContext context) {
-    final isMobile = MediaQuery.sizeOf(context).width < 700;
+    final isMobile = MediaQuery.sizeOf(context).width < 900;
 
     return Obx(
       () => AnimatedContainer(
@@ -42,30 +42,83 @@ class CustomAppBar extends GetView<HomeController> {
             ),
             const Spacer(),
             if (!isMobile) ...[
-              _menu("About"),
-              _menu("Experience"),
-              _menu("Projects"),
-              _menu("Contact"),
+              _menu("About", controller.scrollToTop),
+              _menu("Experience", controller.scrollToExperience),
+              _menu("Projects", controller.scrollToProjects),
+              _menu("Contact", controller.scrollToContact),
             ] else
-              const Icon(Icons.menu, color: Colors.white),
+              PopupMenuButton<VoidCallback>(
+                tooltip: 'Navigation menu',
+                icon: const Icon(Icons.menu_rounded, color: Colors.white),
+                color: const Color(0xff111827),
+                elevation: 12,
+                offset: const Offset(0, 48),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(16),
+                  side: const BorderSide(color: Colors.white12),
+                ),
+                onSelected: (action) => action(),
+                itemBuilder: (_) => [
+                  _mobileMenu(
+                    "About",
+                    Icons.person_outline,
+                    controller.scrollToTop,
+                  ),
+                  _mobileMenu(
+                    "Experience",
+                    Icons.work_outline,
+                    controller.scrollToExperience,
+                  ),
+                  _mobileMenu(
+                    "Projects",
+                    Icons.apps_outlined,
+                    controller.scrollToProjects,
+                  ),
+                  _mobileMenu(
+                    "Contact",
+                    Icons.mail_outline,
+                    controller.scrollToContact,
+                  ),
+                ],
+              ),
           ],
         ),
       ),
     );
   }
 
-  Widget _menu(String title) {
+  Widget _menu(String title, VoidCallback onTap) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 18),
       child: MouseRegion(
         cursor: SystemMouseCursors.click,
-        child: Text(
-          title,
-          style: const TextStyle(
-            color: AppColors.subtitle,
-            fontWeight: FontWeight.w500,
+        child: GestureDetector(
+          onTap: onTap,
+          child: Text(
+            title,
+            style: const TextStyle(
+              color: AppColors.subtitle,
+              fontWeight: FontWeight.w500,
+            ),
           ),
         ),
+      ),
+    );
+  }
+
+  PopupMenuItem<VoidCallback> _mobileMenu(
+    String title,
+    IconData icon,
+    VoidCallback onTap,
+  ) {
+    return PopupMenuItem(
+      value: onTap,
+      child: Row(
+        children: [
+          Icon(icon, size: 20, color: AppColors.cyan),
+          const SizedBox(width: 12),
+          Text(title),
+        ],
       ),
     );
   }

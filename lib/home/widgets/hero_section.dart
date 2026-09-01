@@ -1,14 +1,25 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import '../../../../core/theme/app_colors.dart';
+import '../home_controller.dart';
 
-class HeroSection extends StatelessWidget {
+class HeroSection extends GetView<HomeController> {
   const HeroSection({super.key});
+
+  Future<void> _downloadResume() async {
+    await launchUrl(
+      Uri.parse('assets/assets/resume/Ankur_Maity_Resume.pdf'),
+      mode: LaunchMode.externalApplication,
+      webOnlyWindowName: '_blank',
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
-    final isMobile = MediaQuery.sizeOf(context).width < 700;
+    final isMobile = MediaQuery.sizeOf(context).width < 900;
 
     return Container(
       height: isMobile ? 720 : 850,
@@ -120,7 +131,7 @@ class HeroSection extends StatelessWidget {
                             runSpacing: 14,
                             children: [
                               FilledButton(
-                                onPressed: () {},
+                                onPressed: _downloadResume,
                                 style: FilledButton.styleFrom(
                                   padding: const EdgeInsets.symmetric(
                                     horizontal: 34,
@@ -130,7 +141,7 @@ class HeroSection extends StatelessWidget {
                                 child: const Text("Download Resume"),
                               ),
                               OutlinedButton(
-                                onPressed: () {},
+                                onPressed: controller.scrollToContact,
                                 style: OutlinedButton.styleFrom(
                                   padding: const EdgeInsets.symmetric(
                                     horizontal: 34,
