@@ -6,7 +6,40 @@
       "**/.*",
       "**/node_modules/**"
     ],
+    "headers": [
+      {
+        "source": "/",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "no-cache, no-store, must-revalidate"
+          }
+        ]
+      },
+      {
+        "source": "/index.html",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "no-cache, no-store, must-revalidate"
+          }
+        ]
+      },
+      {
+        "source": "/resume",
+        "headers": [
+          {
+            "key": "Content-Disposition",
+            "value": "attachment; filename=Ankur_Maity_Resume.pdf"
+          }
+        ]
+      }
+    ],
     "rewrites": [
+      {
+        "source": "/resume",
+        "destination": "/assets/assets/resume/Ankur_Maity_Resume.pdf"
+      },
       {
         "source": "**",
         "destination": "/index.html"

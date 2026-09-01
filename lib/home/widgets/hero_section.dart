@@ -1,25 +1,25 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:url_launcher/url_launcher.dart';
 
 import '../../../../core/theme/app_colors.dart';
+import '../../core/utils/download_resume.dart';
 import '../home_controller.dart';
 
 class HeroSection extends GetView<HomeController> {
   const HeroSection({super.key});
 
-  Future<void> _downloadResume() async {
-    await launchUrl(
-      Uri.parse('assets/assets/resume/Ankur_Maity_Resume.pdf'),
-      mode: LaunchMode.externalApplication,
-      webOnlyWindowName: '_blank',
-    );
-  }
-
   @override
   Widget build(BuildContext context) {
     final isMobile = MediaQuery.sizeOf(context).width < 900;
+    final today = DateTime.now();
+    final careerStartDate = DateTime(2015, DateTime.september, 1);
+    var yearsOfExperience = today.year - careerStartDate.year;
+    if (today.month < careerStartDate.month ||
+        (today.month == careerStartDate.month &&
+            today.day < careerStartDate.day)) {
+      yearsOfExperience--;
+    }
 
     return Container(
       height: isMobile ? 720 : 850,
@@ -116,9 +116,9 @@ class HeroSection extends GetView<HomeController> {
                           const SizedBox(height: 25),
                           ConstrainedBox(
                             constraints: const BoxConstraints(maxWidth: 600),
-                            child: const Text(
-                              "Building enterprise-grade Android and Flutter applications with over 10 years of experience in architecture, AI integration, team leadership, and scalable mobile solutions.",
-                              style: TextStyle(
+                            child: Text(
+                              "Building enterprise-grade Android and Flutter applications with over $yearsOfExperience years of experience in architecture, AI integration, team leadership, and scalable mobile solutions.",
+                              style: const TextStyle(
                                 fontSize: 18,
                                 color: AppColors.subtitle,
                                 height: 1.7,
@@ -131,7 +131,7 @@ class HeroSection extends GetView<HomeController> {
                             runSpacing: 14,
                             children: [
                               FilledButton(
-                                onPressed: _downloadResume,
+                                onPressed: downloadResume,
                                 style: FilledButton.styleFrom(
                                   padding: const EdgeInsets.symmetric(
                                     horizontal: 34,
