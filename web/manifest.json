@@ -1,11 +1,11 @@
 {
-    "name": "ankur_portfolio",
-    "short_name": "ankur_portfolio",
+    "name": "Ankur Maity | Lead Mobile Architect",
+    "short_name": "Ankur Maity",
     "start_url": ".",
     "display": "standalone",
-    "background_color": "#0175C2",
-    "theme_color": "#0175C2",
-    "description": "Ankur's Portfolio",
+    "background_color": "#081426",
+    "theme_color": "#4F8CFF",
+    "description": "Portfolio of Ankur Maity, a Lead Mobile Architect with 10+ years building scalable Flutter, Android, IoT, POS, and enterprise applications.",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [
