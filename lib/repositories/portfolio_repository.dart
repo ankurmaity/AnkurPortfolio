@@ -540,9 +540,11 @@ class PortfolioRepository {
   final List<ProjectModel> projects = const [
     ProjectModel(
       title: "AP Aware",
-      subtitle: "AI Disaster Intelligence",
+      subtitle: "Disaster Intelligence Platform",
+      period: "October 2025 - Present",
+      url: "https://play.google.com/store/apps/details?id=com.rtgs.apaware",
       description:
-          "State-wide disaster management platform delivering AI-powered alerts and advisories.",
+          "Integrated Andhra Pradesh platform providing critical alerts, predictive forecasts, and actionable district-level advisories across multiple sectors.",
       image: "assets/images/apaware.png",
       technologies: [
         "Flutter",
@@ -554,8 +556,10 @@ class PortfolioRepository {
     ProjectModel(
       title: "MobileWise",
       subtitle: "No-Code Mobile Platform",
+      period: "December 2023 - October 2025",
+      url: "https://mobilewise.vassardigital.ai/",
       description:
-          "Visual mobile application builder enabling enterprises to create apps without coding.",
+          "Visual WYSIWYG application builder with reusable components, custom branding, workflow automation, and CRM and ERP integrations.",
       image: "assets/images/mobilewise.png",
       technologies: [
         "Flutter",
@@ -565,10 +569,12 @@ class PortfolioRepository {
       ],
     ),
     ProjectModel(
-      title: "TRAY POS",
-      subtitle: "Enterprise POS",
+      title: "TRAY",
+      subtitle: "Enterprise Point of Sale",
+      period: "May 2022 - November 2023 | April 2019 - February 2021",
+      url: "https://tray.com/",
       description:
-          "Android POS platform supporting KIOSK devices and external hardware.",
+          "Cloud-connected point-of-sale software for customized Android devices, with self-service support, management, and reporting.",
       image: "assets/images/tray.png",
       technologies: [
         "Android",
@@ -577,9 +583,12 @@ class PortfolioRepository {
       ],
     ),
     ProjectModel(
-      title: "SmartHQ",
-      subtitle: "IoT Diagnostics",
-      description: "BLE-enabled smart appliance diagnostics application.",
+      title: "SmartHQ Services",
+      subtitle: "Appliance Diagnostics",
+      period: "April 2021 - May 2022",
+      url: "https://www.smarthqservice.com/",
+      description:
+          "Mobile diagnostics application that communicates directly with appliances to isolate and test components in real time.",
       image: "assets/images/smarthq.png",
       technologies: [
         "Flutter",
@@ -588,10 +597,28 @@ class PortfolioRepository {
       ],
     ),
     ProjectModel(
+      title: "RACE Dynamic Form",
+      subtitle: "Digital Data Collection",
+      period: "December 2018 - March 2019",
+      url:
+          "https://www.innovapptive.com/blog/race-dynamic-forms-latest-greatest-whats-here-in-6-1",
+      description:
+          "Digital forms application for collecting field data and sending it directly to dispatchers, supervisors, and managers.",
+      image: "assets/images/race_dynamic_form.png",
+      technologies: [
+        "Android",
+        "SAP",
+        "Dynamic Forms",
+      ],
+    ),
+    ProjectModel(
       title: "mInventory",
       subtitle: "Warehouse Management",
+      period: "May 2018 - December 2019",
+      url:
+          "https://play.google.com/store/apps/details?id=com.innovapptive.minventory",
       description:
-          "Enterprise inventory management and asset tracking solution.",
+          "Warehouse-floor solution for cycle counts, cross-location inventory checks, asset transfers, and stock movement tracking.",
       image: "assets/images/minventory.png",
       technologies: [
         "Android",
@@ -599,14 +626,31 @@ class PortfolioRepository {
       ],
     ),
     ProjectModel(
-      title: "mWorkOrder",
-      subtitle: "Enterprise Mobility",
+      title: "mWorkorder",
+      subtitle: "Work Order Management",
+      period: "July 2017 - October 2018",
+      url:
+          "https://play.google.com/store/apps/details?id=com.innovapptive.mworkorder",
       description:
-          "Mobile work order management platform for enterprise field teams.",
+          "Mobile platform connecting back-end work order systems with field technicians for assignment, tracking, resolution, and reporting.",
       image: "assets/images/mworkorder.png",
       technologies: [
         "Android",
         "SAP",
+      ],
+    ),
+    ProjectModel(
+      title: "mWorklist",
+      subtitle: "Mobile Universal Approvals",
+      period: "November 2015 - July 2017",
+      url: "https://www.innovapptive.com/news/innovapptive-announces-deployment-mworklist-universal-sap-mobile-approvals-solution-large-international-services-company",
+      description:
+          "System-agnostic mobile approval application giving managers one place to review and approve enterprise work items.",
+      image: "assets/images/mworklist.png",
+      technologies: [
+        "Android",
+        "SAP",
+        "Enterprise Workflow",
       ],
     ),
   ];
