@@ -8,8 +8,10 @@ class HeroSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final isMobile = MediaQuery.sizeOf(context).width < 700;
+
     return Container(
-      height: 850,
+      height: isMobile ? 720 : 850,
       child: Stack(
         children: [
           Positioned(
@@ -40,7 +42,7 @@ class HeroSection extends StatelessWidget {
             child: ConstrainedBox(
               constraints: const BoxConstraints(maxWidth: 1100),
               child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 40),
+                padding: EdgeInsets.symmetric(horizontal: isMobile ? 20 : 40),
                 child: Row(
                   children: [
                     Expanded(
@@ -63,18 +65,18 @@ class HeroSection extends StatelessWidget {
                             ),
                           ),
                           const SizedBox(height: 30),
-                          const Text(
+                          Text(
                             "Ankur Maity",
                             style: TextStyle(
-                              fontSize: 72,
+                              fontSize: isMobile ? 48 : 72,
                               fontWeight: FontWeight.bold,
                               height: 1,
                             ),
                           ),
                           const SizedBox(height: 24),
                           DefaultTextStyle(
-                            style: const TextStyle(
-                              fontSize: 28,
+                            style: TextStyle(
+                              fontSize: isMobile ? 21 : 28,
                               color: AppColors.cyan,
                               fontWeight: FontWeight.w600,
                             ),
@@ -101,9 +103,9 @@ class HeroSection extends StatelessWidget {
                             ),
                           ),
                           const SizedBox(height: 25),
-                          const SizedBox(
-                            width: 600,
-                            child: Text(
+                          ConstrainedBox(
+                            constraints: const BoxConstraints(maxWidth: 600),
+                            child: const Text(
                               "Building enterprise-grade Android and Flutter applications with over 10 years of experience in architecture, AI integration, team leadership, and scalable mobile solutions.",
                               style: TextStyle(
                                 fontSize: 18,
@@ -113,7 +115,9 @@ class HeroSection extends StatelessWidget {
                             ),
                           ),
                           const SizedBox(height: 45),
-                          Row(
+                          Wrap(
+                            spacing: 20,
+                            runSpacing: 14,
                             children: [
                               FilledButton(
                                 onPressed: () {},
@@ -125,7 +129,6 @@ class HeroSection extends StatelessWidget {
                                 ),
                                 child: const Text("Download Resume"),
                               ),
-                              const SizedBox(width: 20),
                               OutlinedButton(
                                 onPressed: () {},
                                 style: OutlinedButton.styleFrom(
@@ -141,31 +144,33 @@ class HeroSection extends StatelessWidget {
                         ],
                       ),
                     ),
-                    const SizedBox(width: 50),
-                    Expanded(
-                      child: Center(
-                        child: Container(
-                          width: 420,
-                          height: 420,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(40),
-                            gradient: const LinearGradient(
-                              colors: [
-                                Color(0xff4F8CFF),
-                                Color(0xff00D4FF),
-                              ],
+                    if (!isMobile) ...[
+                      const SizedBox(width: 50),
+                      Expanded(
+                        child: Center(
+                          child: Container(
+                            width: 420,
+                            height: 420,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(40),
+                              gradient: const LinearGradient(
+                                colors: [
+                                  Color(0xff4F8CFF),
+                                  Color(0xff00D4FF),
+                                ],
+                              ),
                             ),
-                          ),
-                          child: const Center(
-                            child: Icon(
-                              Icons.flutter_dash,
-                              color: Colors.white,
-                              size: 170,
+                            child: const Center(
+                              child: Icon(
+                                Icons.flutter_dash,
+                                color: Colors.white,
+                                size: 170,
+                              ),
                             ),
                           ),
                         ),
                       ),
-                    ),
+                    ],
                   ],
                 ),
               ),

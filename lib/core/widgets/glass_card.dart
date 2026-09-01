@@ -35,6 +35,8 @@ class _GlassCardState extends State<GlassCard> {
 
   @override
   Widget build(BuildContext context) {
+    final availableWidth = MediaQuery.sizeOf(context).width - 32;
+
     return MouseRegion(
       cursor:
           widget.onTap != null ? SystemMouseCursors.click : MouseCursor.defer,
@@ -45,7 +47,7 @@ class _GlassCardState extends State<GlassCard> {
         child: AnimatedContainer(
           duration: const Duration(milliseconds: 250),
           curve: Curves.easeOut,
-          width: widget.width,
+          width: widget.width.clamp(0, availableWidth).toDouble(),
           padding: widget.padding,
           transform: Matrix4.identity()
             ..translate(

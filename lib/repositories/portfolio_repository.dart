@@ -64,10 +64,10 @@ class PortfolioRepository {
       color: Color(0xff4F8CFF),
     ),
     ServiceModel(
-      title: "AI Solutions",
+      title: "Technical Architecture",
       description:
-          "GenAI, LLM integration and intelligent automation for business applications.",
-      icon: Icons.auto_awesome,
+          "Scalable architecture, system design and technical strategy for complex products.",
+      icon: Icons.account_tree_outlined,
       color: Color(0xff7B61FF),
     ),
     ServiceModel(
@@ -131,25 +131,25 @@ class PortfolioRepository {
       ],
     ),
     TechnologyGroupModel(
-      title: "AI & Automation",
-      icon: Icons.auto_awesome,
+      title: "Architecture & Design",
+      icon: Icons.account_tree_outlined,
       color: Color(0xff7B61FF),
       technologies: [
-        "LLMs",
-        "GenAI",
-        "OpenAI",
-        "Automation",
+        "Clean Architecture",
+        "System Design",
+        "Design Patterns",
+        "Microservices",
       ],
     ),
     TechnologyGroupModel(
-      title: "GIS & Maps",
-      icon: Icons.map,
+      title: "APIs & Integrations",
+      icon: Icons.hub_outlined,
       color: Color(0xff06B6D4),
       technologies: [
-        "GeoServer",
-        "Flutter Map",
-        "Google Maps",
-        "GeoJSON",
+        "REST APIs",
+        "WebSockets",
+        "OAuth 2.0",
+        "Third-Party SDKs",
       ],
     ),
     TechnologyGroupModel(
@@ -398,8 +398,8 @@ class PortfolioRepository {
 
     ExperienceModel(
       company: "TRAY",
-      role: "Senior Software Engineer",
-      duration: "April 2019 - Feb 20221",
+      role: "Software Engineer",
+      duration: "April 2019 - Feb 2021",
       summary:
           "Developed enterprise Point-of-Sale applications for Android KIOSK devices with hardware integrations, receipt engine customization and performance optimization.",
       color: const Color(0xffF59E0B),

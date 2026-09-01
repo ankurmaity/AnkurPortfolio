@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../../../../../core/theme/app_colors.dart';
 import '../../../core/widgets/section_title.dart';
 import '../../home_controller.dart';
 import 'service_card.dart';
@@ -11,10 +10,12 @@ class ServicesSection extends GetView<HomeController> {
 
   @override
   Widget build(BuildContext context) {
+    final isMobile = MediaQuery.sizeOf(context).width < 600;
+
     return Container(
-      padding: const EdgeInsets.symmetric(
-        horizontal: 40,
-        vertical: 120,
+      padding: EdgeInsets.symmetric(
+        horizontal: isMobile ? 16 : 40,
+        vertical: isMobile ? 72 : 120,
       ),
       child: ConstrainedBox(
         constraints: const BoxConstraints(maxWidth: 1300),
@@ -24,9 +25,9 @@ class ServicesSection extends GetView<HomeController> {
               eyebrow: "WHAT I BUILD",
               title: "Solutions I Deliver",
               subtitle:
-                  "Enterprise mobile applications, AI solutions, GIS platforms, IoT integrations, and scalable backend systems.",
+                  "Enterprise mobile applications, technical architecture, GIS platforms, IoT integrations, and scalable backend systems.",
             ),
-            const SizedBox(height: 60),
+            SizedBox(height: isMobile ? 36 : 60),
             Wrap(
               spacing: 30,
               runSpacing: 30,

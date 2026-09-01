@@ -16,6 +16,8 @@ class SectionTitle extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final isMobile = MediaQuery.sizeOf(context).width < 600;
+
     return Column(
       children: [
         Text(
@@ -30,15 +32,15 @@ class SectionTitle extends StatelessWidget {
         Text(
           title,
           textAlign: TextAlign.center,
-          style: const TextStyle(
-            fontSize: 50,
+          style: TextStyle(
+            fontSize: isMobile ? 34 : 50,
             fontWeight: FontWeight.bold,
           ),
         ),
         if (subtitle != null) ...[
           const SizedBox(height: 18),
-          SizedBox(
-            width: 650,
+          ConstrainedBox(
+            constraints: const BoxConstraints(maxWidth: 650),
             child: Text(
               subtitle!,
               textAlign: TextAlign.center,

@@ -10,10 +10,12 @@ class ExperienceSection extends GetView<HomeController> {
 
   @override
   Widget build(BuildContext context) {
+    final isMobile = MediaQuery.sizeOf(context).width < 600;
+
     return Container(
-      padding: const EdgeInsets.symmetric(
-        horizontal: 24,
-        vertical: 100,
+      padding: EdgeInsets.symmetric(
+        horizontal: isMobile ? 16 : 24,
+        vertical: isMobile ? 64 : 100,
       ),
       child: ConstrainedBox(
         constraints: const BoxConstraints(
@@ -25,18 +27,16 @@ class ExperienceSection extends GetView<HomeController> {
               eyebrow: "PROFESSIONAL JOURNEY",
               title: "A Decade of Building Enterprise Software",
               subtitle:
-              "From enterprise mobility to AI-powered platforms, building products that solve complex real-world problems.",
+                  "From enterprise mobility to AI-powered platforms, building products that solve complex real-world problems.",
             ),
-
-            const SizedBox(height: 60),
-
+            SizedBox(height: isMobile ? 36 : 60),
             ListView.separated(
               shrinkWrap: true,
-              physics:
-              const NeverScrollableScrollPhysics(),
+              physics: const NeverScrollableScrollPhysics(),
               itemCount: controller.experiences.length,
-              separatorBuilder: (_, __) =>
-              const SizedBox(height: 24),
+              separatorBuilder: (_, __) => SizedBox(
+                height: isMobile ? 16 : 24,
+              ),
               itemBuilder: (_, index) {
                 return ExperienceCard(
                   experience: controller.experiences[index],

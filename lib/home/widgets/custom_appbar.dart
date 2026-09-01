@@ -9,10 +9,15 @@ class CustomAppBar extends GetView<HomeController> {
 
   @override
   Widget build(BuildContext context) {
+    final isMobile = MediaQuery.sizeOf(context).width < 700;
+
     return Obx(
       () => AnimatedContainer(
         duration: const Duration(milliseconds: 300),
-        padding: const EdgeInsets.symmetric(horizontal: 60, vertical: 20),
+        padding: EdgeInsets.symmetric(
+          horizontal: isMobile ? 20 : 60,
+          vertical: 20,
+        ),
         decoration: BoxDecoration(
           color: controller.isScrolled.value
               ? Colors.black.withOpacity(.35)
@@ -27,19 +32,22 @@ class CustomAppBar extends GetView<HomeController> {
         ),
         child: Row(
           children: [
-            const Text(
+            Text(
               "Ankur Maity",
               style: TextStyle(
                 color: Colors.white,
-                fontSize: 24,
+                fontSize: isMobile ? 20 : 24,
                 fontWeight: FontWeight.bold,
               ),
             ),
             const Spacer(),
-            _menu("About"),
-            _menu("Experience"),
-            _menu("Projects"),
-            _menu("Contact"),
+            if (!isMobile) ...[
+              _menu("About"),
+              _menu("Experience"),
+              _menu("Projects"),
+              _menu("Contact"),
+            ] else
+              const Icon(Icons.menu, color: Colors.white),
           ],
         ),
       ),
